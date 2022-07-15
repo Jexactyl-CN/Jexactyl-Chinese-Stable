@@ -58,9 +58,7 @@ class ServerController extends ClientApiController
     {
         $nests = Nest::all();
 
-        return $this->fractal->collection($nests)
-            ->transformWith($this->getTransformer(NestTransformer::class))
-            ->toArray();
+        return $this->fractal->collection($nests)->transformWith($this->getTransformer(NestTransformer::class))->toArray();
     }
 
     /**
@@ -80,8 +78,6 @@ class ServerController extends ClientApiController
         $this->verifyResources($request);
 
         $egg = Egg::find($request->input('egg'));
-        $nest = Nest::find($request->input('nest'));
-
         $memory = $request->input('memory') * 1024;
         $disk = $request->input('disk') * 1024;
 
@@ -89,7 +85,7 @@ class ServerController extends ClientApiController
             'name' => $request->input('name'),
             'owner_id' => $user->id,
             'egg_id' => $egg->id,
-            'nest_id' => $nest->id,
+            'nest_id' => $request->input('nest'),
             'allocation_id' => $this->getAllocation($request),
             'allocation_limit' => $request->input('ports'),
             'backup_limit' => $request->input('backups'),
