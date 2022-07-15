@@ -61,7 +61,7 @@ const ConflictStateRenderer = () => {
         <Suspended />
     ) : (
         <ScreenBlock
-            title={isTransferring ? '转移中' : 回档中'}
+            title={isTransferring ? '转移中' : '回档中'}
             image={ServerRestoreSvg}
             message={
                 isTransferring
