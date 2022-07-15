@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
 import React, { useState } from 'react';
@@ -19,13 +27,13 @@ interface Props {
 const getActionDetails = (action: string): [string] => {
     switch (action) {
         case 'command':
-            return ['Send Command'];
+            return ['发送指令'];
         case 'power':
-            return ['Send Power Action'];
+            return ['发送电源操作'];
         case 'backup':
-            return ['Create Backup'];
+            return ['创建备份'];
         default:
-            return ['Unknown Action'];
+            return ['其他动作'];
     }
 };
 
@@ -67,19 +75,19 @@ export default ({ schedule, task }: Props) => {
             />
             <Dialog.Confirm
                 open={visible}
-                title={'Confirm task deletion'}
-                confirm={'Yes, delete task'}
+                title={'确认删除任务'}
+                confirm={'删除'}
                 onClose={() => setVisible(false)}
                 onConfirmed={onConfirmDeletion}
             >
-                Are you sure you want to delete this task? This action cannot be undone.
+                您确定要删除此任务吗？ 此操作无法撤消.
             </Dialog.Confirm>
             <div css={tw`flex-none sm:flex-1 w-full sm:w-auto overflow-x-auto`}>
                 <p css={tw`md:ml-6 text-neutral-200 uppercase text-sm`}>{title}</p>
                 {task.payload && (
                     <div css={tw`md:ml-6 mt-2`}>
                         {task.action === 'backup' && (
-                            <p css={tw`text-xs uppercase text-neutral-400 mb-1`}>Ignoring files & folders:</p>
+                            <p css={tw`text-xs uppercase text-neutral-400 mb-1`}>忽略的文件 & 目录:</p>
                         )}
                         <div
                             css={tw`font-mono bg-neutral-800 rounded py-1 px-2 text-sm w-auto inline-block whitespace-pre-wrap break-all`}
@@ -94,7 +102,7 @@ export default ({ schedule, task }: Props) => {
                     <div css={tw`mr-6`}>
                         <div css={tw`flex items-center px-2 py-1 bg-yellow-500 text-yellow-800 text-sm rounded-full`}>
                             <Icon.ChevronDown css={tw`w-3 h-3 mr-2`} />
-                            Continues on Failure
+                            出错时也继续运行
                         </div>
                     </div>
                 )}
@@ -102,7 +110,7 @@ export default ({ schedule, task }: Props) => {
                     <div css={tw`mr-6`}>
                         <div css={tw`flex items-center px-2 py-1 bg-neutral-500 text-sm rounded-full`}>
                             <Icon.Clock css={tw`w-3 h-3 mr-2`} />
-                            {task.timeOffset}s later
+                            {task.timeOffset}秒后
                         </div>
                     </div>
                 )}
