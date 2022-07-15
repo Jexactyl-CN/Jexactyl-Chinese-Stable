@@ -88,7 +88,7 @@
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.jexactyl.index') ?: 'active' }}">
                             <a href="{{ route('admin.jexactyl.index')}}">
-                                <i class="fa fa-code"></i> <span>Jexactyl</span>
+                                <i class="fa fa-code"></i> <span>Jexactyl 设置</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.api') ?: 'active' }}">

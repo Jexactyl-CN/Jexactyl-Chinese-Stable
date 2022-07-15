@@ -59,7 +59,7 @@ const OverviewContainer = () => {
 
     return (
         <PageContentBlock title={'商店概览'}>
-            <h1 className={'j-left text-5xl'}>👋 Hey, {username}!</h1>
+            <h1 className={'j-left text-5xl'}>👋 你好, {username}!</h1>
             <h3 className={'j-left text-2xl mt-2 text-neutral-500'}>欢迎来到服务器商店.</h3>
             <Container className={'j-right lg:grid lg:grid-cols-3 my-10'}>
                 <TitledGreyBox title={'总 CPU'} css={tw`mt-8 sm:mt-0`}>

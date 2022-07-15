@@ -53,7 +53,7 @@
         <a href="https://github.com/pterodactyl-china"><button class="btn btn-primary" style="width:100%;"><i class="fa fa-fw fa-support"></i>翼龙中国 Github</button></a>
     </div>
     <div class="col-xs-6 col-sm-3 text-center">
-        <a href="{{ $version->getDonations() }}"><button class="btn btn-success" style="width:100%;"><i class="fa fa-fw fa-money"></i> 支持此项目</button></a>
+        <a href="https://pterodactyl.io"><button class="btn btn-success" style="width:100%;"><i class="fa fa-fw fa-link"></i> Pterodactyl</button></a>
     </div>
 </div>
 @endsection
