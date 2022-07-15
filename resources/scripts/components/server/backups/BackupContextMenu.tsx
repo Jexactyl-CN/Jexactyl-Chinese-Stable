@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
 import React, { useState } from 'react';
@@ -117,7 +125,7 @@ export default ({ backup }: Props) => {
                 title={`Unlock "${backup.name}"`}
                 onConfirmed={onLockToggle}
             >
-                This backup will no longer be protected from automated or accidental deletions.
+                此备份将不再受到意外删除保护.
             </Dialog.Confirm>
             <Dialog.Confirm
                 open={modal === 'restore'}
@@ -127,8 +135,7 @@ export default ({ backup }: Props) => {
                 onConfirmed={() => doRestorationAction()}
             >
                 <p>
-                    Your server will be stopped. You will not be able to control the power state, access the file
-                    manager, or create additional backups until completed.
+                    该服务器将停止运行,你将无法访问大部分服务器管理功能直至备份完成.
                 </p>
                 <p css={tw`mt-4 -mb-2 bg-gray-700 p-3 rounded`}>
                     <label htmlFor={'restore_truncate'} css={tw`text-base flex items-center cursor-pointer`}>
@@ -140,18 +147,18 @@ export default ({ backup }: Props) => {
                             checked={truncate}
                             onChange={() => setTruncate((s) => !s)}
                         />
-                        Delete all files before restoring backup.
+                        回档并删除所有文件.
                     </label>
                 </p>
             </Dialog.Confirm>
             <Dialog.Confirm
                 title={`Delete "${backup.name}"`}
-                confirm={'Continue'}
+                confirm={'继续'}
                 open={modal === 'delete'}
                 onClose={() => setModal('')}
                 onConfirmed={doDeletion}
             >
-                This is a permanent operation. The backup cannot be recovered once deleted.
+                您确定要删除此备份吗？删除后将无法恢复.
             </Dialog.Confirm>
             <SpinnerOverlay visible={loading} fixed />
             {backup.isSuccessful ? (
@@ -169,13 +176,13 @@ export default ({ backup }: Props) => {
                         <Can action={'backup.download'}>
                             <DropdownButtonRow onClick={doDownload}>
                                 <Icon.DownloadCloud css={tw`text-xs`} />
-                                <span css={tw`ml-2`}>Download</span>
+                                <span css={tw`ml-2`}>下载</span>
                             </DropdownButtonRow>
                         </Can>
                         <Can action={'backup.restore'}>
                             <DropdownButtonRow onClick={() => setModal('restore')}>
                                 <Icon.Upload css={tw`text-xs`} />
-                                <span css={tw`ml-2`}>Restore</span>
+                                <span css={tw`ml-2`}>回档</span>
                             </DropdownButtonRow>
                         </Can>
                         <Can action={'backup.delete'}>
@@ -184,19 +191,19 @@ export default ({ backup }: Props) => {
                                     {backup.isLocked ? (
                                         <>
                                             <Icon.Unlock css={tw`text-xs mr-2`} />
-                                            Unlock
+                                            解锁
                                         </>
                                     ) : (
                                         <>
                                             <Icon.Lock css={tw`text-xs mr-2`} />
-                                            Lock
+                                            锁定
                                         </>
                                     )}
                                 </DropdownButtonRow>
                                 {!backup.isLocked && (
                                     <DropdownButtonRow danger onClick={() => setModal('delete')}>
                                         <Icon.Trash css={tw`text-xs`} />
-                                        <span css={tw`ml-2`}>Delete</span>
+                                        <span css={tw`ml-2`}>删除</span>
                                     </DropdownButtonRow>
                                 )}
                             </>

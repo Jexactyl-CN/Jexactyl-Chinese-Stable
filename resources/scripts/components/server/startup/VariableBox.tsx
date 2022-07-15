@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import { debounce } from 'debounce';
 import isEqual from 'react-fast-compare';
@@ -60,7 +68,7 @@ const VariableBox = ({ variable }: Props) => {
             title={
                 <p css={tw`text-sm uppercase`}>
                     {!variable.isEditable && (
-                        <span css={tw`bg-neutral-700 text-xs py-1 px-2 rounded-full mr-2 mb-1`}>Read Only</span>
+                        <span css={tw`bg-neutral-700 text-xs py-1 px-2 rounded-full mr-2 mb-1`}>只读</span>
                     )}
                     {variable.name}
                 </p>

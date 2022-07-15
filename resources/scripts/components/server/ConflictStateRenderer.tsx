@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import React from 'react';
 import { ServerContext } from '@/state/server';
 import ScreenBlock from '@/components/elements/ScreenBlock';
@@ -11,24 +19,24 @@ export default () => {
 
     return status === 'installing' || status === 'install_failed' ? (
         <ScreenBlock
-            title={'Running Installer'}
+            title={'正在运行安装程序'}
             image={ServerInstallSvg}
-            message={'Your server should be ready soon, please try again in a few minutes.'}
+            message={'您的服务器应该很快就准备好了，请过几分钟再来.'}
         />
     ) : status === 'suspended' ? (
         <ScreenBlock
-            title={'Server Suspended'}
+            title={'服务器已被暂停'}
             image={ServerErrorSvg}
-            message={'This server is suspended and cannot be accessed.'}
+            message={'此服务器已被暂停，无法访问.'}
         />
     ) : (
         <ScreenBlock
-            title={isTransferring ? 'Transferring' : 'Restoring from Backup'}
+            title={isTransferring ? '转移中' : '回档中'}
             image={ServerRestoreSvg}
             message={
                 isTransferring
-                    ? 'Your server is being transfered to a new node, please check back later.'
-                    : 'Your server is currently being restored from a backup, please check back in a few minutes.'
+                    ? '您的服务器正在转移到新节点服务器，请稍后再回来查看.'
+                    : '您的服务器目前正在从备份中恢复，请过几分钟再回来查看.'
             }
         />
     );

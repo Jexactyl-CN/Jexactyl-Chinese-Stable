@@ -1,3 +1,10 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
 import React from 'react';
 import tw from 'twin.macro';
 import http from '@/api/http';
@@ -58,32 +65,32 @@ export default () => {
                     <SearchContainer size={32} />
                 </div>
                 <NavLink to={'/'} className={'navigation-link'} exact>
-                    <Tooltip placement={'bottom'} content={'Servers'}>
+                    <Tooltip placement={'bottom'} content={'商店'}>
                         <Icon.Server size={32} css={tw`my-8`} />
                     </Tooltip>
                 </NavLink>
                 <NavLink to={'/account'} className={'navigation-link'}>
-                    <Tooltip placement={'bottom'} content={'Account'}>
+                    <Tooltip placement={'bottom'} content={'账户'}>
                         <Icon.User size={32} css={tw`my-8`} />
                     </Tooltip>
                 </NavLink>
                 {store === 'true' && (
                     <NavLink to={'/store'} className={'navigation-link'}>
-                        <Tooltip placement={'bottom'} content={'Store'}>
+                        <Tooltip placement={'bottom'} content={'商店'}>
                             <Icon.ShoppingCart size={32} css={tw`my-8`} />
                         </Tooltip>
                     </NavLink>
                 )}
                 {rootAdmin && (
                     <a href={'/admin'} className={'navigation-link'}>
-                        <Tooltip placement={'bottom'} content={'Admin'}>
+                        <Tooltip placement={'bottom'} content={'管理'}>
                             <Icon.Settings size={32} css={tw`my-8`} />
                         </Tooltip>
                     </a>
                 )}
                 <div id={'logo'}>
                     <button onClick={onTriggerLogout} className={'navigation-link'}>
-                        <Tooltip placement={'bottom'} content={'Logout'}>
+                        <Tooltip placement={'bottom'} content={'登出'}>
                             <Icon.LogOut size={32} css={tw`flex flex-row fixed bottom-0 mb-8`} />
                         </Tooltip>
                     </button>

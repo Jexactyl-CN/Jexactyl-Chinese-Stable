@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import classNames from 'classnames';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
@@ -32,7 +40,7 @@ export default () => {
     }, [error]);
 
     return (
-        <ServerContentBlock title={'Activity Log'}>
+        <ServerContentBlock title={'活动日志'}>
             <FlashMessageRender byKey={'server:activity'} />
             <h1 className={'j-left text-5xl'}>Server Activity</h1>
             <h3 className={'j-left text-2xl mt-2 text-neutral-500 mb-10'}>View activity on this server.</h3>
@@ -43,14 +51,14 @@ export default () => {
                         className={classNames(btnStyles.button, btnStyles.text, 'w-full sm:w-auto')}
                         onClick={() => setFilters((value) => ({ ...value, filters: {} }))}
                     >
-                        Clear Filters <Icon.XCircle className={'w-4 h-4 ml-2'} />
+                        清除过滤器 <Icon.XCircle className={'w-4 h-4 ml-2'} />
                     </Link>
                 </div>
             )}
             {!data && isValidating ? (
                 <Spinner centered />
             ) : !data?.items.length ? (
-                <p className={'j-up text-sm text-center text-gray-400'}>No activity logs available for this server.</p>
+                <p className={'j-up text-sm text-center text-gray-400'}>此服务器没有可用的活动日志.</p>
             ) : (
                 <div className={'bg-neutral-900 j-up'}>
                     {data?.items.map((activity) => (

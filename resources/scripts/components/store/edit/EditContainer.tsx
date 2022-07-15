@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import useSWR from 'swr';
 import tw from 'twin.macro';
 import getServers from '@/api/getServers';
@@ -49,7 +57,7 @@ export default () => {
     }, [error]);
 
     return (
-        <PageContentBlock title={'Edit a server'} showFlashKey={'store:edit'}>
+        <PageContentBlock title={'编辑服务器'} showFlashKey={'store:edit'}>
             <h1 className={'j-left text-5xl'}>Edit your servers</h1>
             <h3 className={'j-left text-2xl mt-2 text-neutral-500'}>
                 Configure limits and options for your instances.
@@ -78,7 +86,7 @@ export default () => {
                             ))
                         ) : (
                             <p css={tw`text-center text-sm text-neutral-400`}>
-                                There are no servers available to edit.
+                                没有服务器可供编辑.
                             </p>
                         )
                     }

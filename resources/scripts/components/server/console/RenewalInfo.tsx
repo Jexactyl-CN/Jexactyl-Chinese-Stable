@@ -27,16 +27,15 @@ export default () => {
             <Dialog.Confirm
                 open={open}
                 onClose={() => setOpen(false)}
-                title={'Confirm server renewal'}
+                title={'确认服务器续订'}
                 onConfirmed={() => doRenewal()}
             >
                 <SpinnerOverlay visible={loading} />
-                You will be charged {store.renewals.cost} {store.currency} to add {store.renewals.days} days until your
-                next renewal is due.
+                你将花费 {store.renewals.cost} {store.currency} 为您的服务器增加 7 天订阅.
             </Dialog.Confirm>
-            in {renewal} days{' '}
+            于 {renewal} 天{' '}
             <span className={'text-blue-500 text-sm cursor-pointer'} onClick={() => setOpen(true)}>
-                {'('}Renew{')'}
+                {'('}续订{')'}
             </span>
         </>
     );

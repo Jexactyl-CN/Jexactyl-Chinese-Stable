@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import React from 'react';
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
@@ -31,7 +39,7 @@ export default ({ server, className }: { server: Server; className?: string }) =
                 <div css={tw`flex-1 ml-4 sm:block hidden`}>
                     <div css={tw`flex justify-center`}>
                         <Icon.ArrowRightCircle size={20} css={tw`text-neutral-600`} />
-                        <IconDescription>Edit Server</IconDescription>
+                        <IconDescription>编辑服务器</IconDescription>
                     </div>
                 </div>
             </React.Fragment>

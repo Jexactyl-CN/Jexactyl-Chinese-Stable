@@ -16,9 +16,9 @@ export default () => {
     const limits = ServerContext.useStoreState((state) => state.server.data!.limits);
     const previous = useRef<Record<'tx' | 'rx', number>>({ tx: -1, rx: -1 });
 
-    const cpu = useChartTickLabel('CPU', limits.cpu, '%', 2);
-    const memory = useChartTickLabel('Memory', limits.memory, 'MB');
-    const network = useChart('Network', {
+    const cpu = useChartTickLabel('CPU 负载', limits.cpu, '%', 2);
+    const memory = useChartTickLabel('运行内存', limits.memory, 'MB');
+    const network = useChart('网络流量', {
         sets: 2,
         options: {
             scales: {
@@ -34,7 +34,7 @@ export default () => {
         callback(opts, index) {
             return {
                 ...opts,
-                label: !index ? 'Network In' : 'Network Out',
+                label: !index ? '网络流量（接收）' : '网络流量（发送）',
                 borderColor: !index ? theme('colors.cyan.400') : theme('colors.green.400'),
                 backgroundColor: hexToRgba(!index ? theme('colors.cyan.700') : theme('colors.green.700'), 0.5),
             };
@@ -68,20 +68,20 @@ export default () => {
 
     return (
         <>
-            <ChartBlock title={'CPU Load'}>
+            <ChartBlock title={'CPU 负载'}>
                 <Line {...cpu.props} />
             </ChartBlock>
-            <ChartBlock title={'Memory'}>
+            <ChartBlock title={'运行内存'}>
                 <Line {...memory.props} />
             </ChartBlock>
             <ChartBlock
-                title={'Network'}
+                title={'网络流量'}
                 legend={
                     <>
-                        <Tooltip arrow content={'Inbound'}>
+                        <Tooltip arrow content={'接收'}>
                             <Icon.UploadCloud className={'mr-2 w-4 h-4 text-green-400'} />
                         </Tooltip>
-                        <Tooltip arrow content={'Outbound'}>
+                        <Tooltip arrow content={'发送'}>
                             <Icon.DownloadCloud className={'w-4 h-4 text-cyan-400'} />
                         </Tooltip>
                     </>

@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+ 
 import tw from 'twin.macro';
 import { join } from 'path';
 import { object, string } from 'yup';
@@ -76,7 +84,7 @@ export default ({ className }: WithClassname) => {
                         url: string()
                             .required()
                             .url()
-                            .test('unique', 'File or directory with that name already exists.', (v) => {
+                            .test('unique', '同名的文件或目录已存在.', (v) => {
                                 return (
                                     v !== undefined &&
                                     data !== undefined &&
@@ -87,7 +95,7 @@ export default ({ className }: WithClassname) => {
                 >
                     {({ resetForm, submitForm, isSubmitting: _, values }) => (
                         <Dialog
-                            title={'Pull Remote File'}
+                            title={'下载远程文件'}
                             open={visible}
                             onClose={() => {
                                 setVisible(false);
@@ -98,7 +106,7 @@ export default ({ className }: WithClassname) => {
                             <Form css={tw`m-0`}>
                                 <Field type={'text'} id={'url'} name={'url'} label={'URL'} autoFocus />
                                 <p css={tw`mt-2 text-sm md:text-base break-all`}>
-                                    <span css={tw`text-neutral-200`}>This file will be downloaded to&nbsp;</span>
+                                    <span css={tw`text-neutral-200`}>该文件将被下载到&nbsp;</span>
                                     <Code>
                                         /home/container/
                                         <span css={tw`text-cyan-200`}>
@@ -118,10 +126,10 @@ export default ({ className }: WithClassname) => {
                                         resetForm();
                                     }}
                                 >
-                                    Cancel
+                                    取消
                                 </Button.Text>
                                 <Button className={'w-full sm:w-auto'} onClick={submitForm}>
-                                    Pull File
+                                    下载远程文件
                                 </Button>
                             </Dialog.Footer>
                         </Dialog>

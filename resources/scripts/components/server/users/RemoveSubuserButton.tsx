@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
 import React, { useState } from 'react';
@@ -34,16 +42,15 @@ export default ({ subuser }: { subuser: Subuser }) => {
             <Dialog.Confirm
                 open={showConfirmation}
                 onClose={() => setShowConfirmation(false)}
-                title={'Confirm task deletion'}
-                confirm={'Yes, delete subuser'}
+                title={'删除此子用户？'}
+                confirm={'删除'}
                 onConfirmed={doDeletion}
             >
-                Are you sure you wish to remove this subuser? They will have all access to this server revoked
-                immediately.
+                您确定要删除此子用户吗？ 他将立即失去对该服务器的所有访问权限.
             </Dialog.Confirm>
             <button
                 type={'button'}
-                aria-label={'Delete subuser'}
+                aria-label={'删除子用户'}
                 css={tw`block text-sm p-2 text-neutral-500 hover:text-red-600 transition-colors duration-150`}
                 onClick={() => setShowConfirmation(true)}
             >

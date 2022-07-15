@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+ 
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
 import React, { useState } from 'react';
@@ -38,11 +46,11 @@ const DeleteAllocationButton = ({ allocation }: Props) => {
             <Dialog.Confirm
                 open={confirm}
                 onClose={() => setConfirm(false)}
-                title={'Remove Allocation'}
-                confirm={'Delete'}
+                title={'删除网络分配'}
+                confirm={'删除'}
                 onConfirmed={deleteAllocation}
             >
-                This allocation will be immediately removed from your server.
+                此分配将立即从您的服务器中删除.
             </Dialog.Confirm>
             <Button.Danger
                 variant={Button.Variants.Secondary}

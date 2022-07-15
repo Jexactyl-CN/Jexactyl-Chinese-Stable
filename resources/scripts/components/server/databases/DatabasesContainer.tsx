@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import useFlash from '@/plugins/useFlash';
 import Can from '@/components/elements/Can';
@@ -37,10 +45,10 @@ export default () => {
     }, []);
 
     return (
-        <ServerContentBlock title={'Databases'}>
+        <ServerContentBlock title={'数据库'}>
             <FlashMessageRender byKey={'databases'} css={tw`mb-4`} />
             <h1 className={'j-left text-5xl'}>Databases</h1>
-            <h3 className={'j-left text-2xl mt-2 text-neutral-500 mb-10'}>Create databases for your application.</h3>
+            <h3 className={'j-left text-2xl mt-2 text-neutral-500 mb-10'}>为您的应用程序创建数据库.</h3>
             {!databases.length && loading ? (
                 <Spinner size={'large'} centered />
             ) : (
@@ -57,16 +65,15 @@ export default () => {
                         ) : (
                             <p css={tw`text-center text-sm text-neutral-300`}>
                                 {databaseLimit > 0
-                                    ? 'It looks like you have no databases.'
-                                    : 'Databases cannot be created for this server.'}
+                                    ? '看起来此服务器实例没有数据库.'
+                                    : '此服务器实例无法创建数据库'}
                             </p>
                         )}
                         <Can action={'database.create'}>
                             <div css={tw`mt-6 flex items-center justify-end`}>
                                 {databaseLimit > 0 && databases.length > 0 && (
                                     <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                                        {databases.length} of {databaseLimit} databases have been allocated to this
-                                        server.
+                                        此服务器实例已创建 {databases.length} / {databaseLimit} 个数据库
                                     </p>
                                 )}
                                 {databaseLimit > 0 && databaseLimit !== databases.length && (

@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import useFlash from '@/plugins/useFlash';
 import Can from '@/components/elements/Can';
@@ -38,7 +46,7 @@ export default () => {
     }, []);
 
     return (
-        <ServerContentBlock title={'Schedules'}>
+        <ServerContentBlock title={'计划'}>
             <FlashMessageRender byKey={'schedules'} css={tw`mb-4`} />
             <h1 className={'j-left text-5xl'}>Schedules</h1>
             <h3 className={'j-left text-2xl mt-2 text-neutral-500 mb-10'}>Manage functions for your server.</h3>
@@ -48,7 +56,7 @@ export default () => {
                 <>
                     {schedules.length === 0 ? (
                         <p css={tw`text-sm text-center text-neutral-300`}>
-                            There are no schedules configured for this server.
+                            此服务器实例未创建计划.
                         </p>
                     ) : (
                         schedules.map((schedule) => (
@@ -70,7 +78,7 @@ export default () => {
                         <div css={tw`mt-8 flex justify-end`}>
                             <EditScheduleModal visible={visible} onModalDismissed={() => setVisible(false)} />
                             <Button type={'button'} onClick={() => setVisible(true)}>
-                                Create schedule
+                                创建计划
                             </Button>
                         </div>
                     </Can>

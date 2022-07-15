@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import React from 'react';
 import tw from 'twin.macro';
 import { ApplicationStore } from '@/state';
@@ -25,7 +33,7 @@ export default ({ databaseId, onUpdate }: { databaseId: string; onUpdate: (datab
                 console.error(error);
                 addFlash({
                     type: 'error',
-                    title: 'Error',
+                    title: '错误',
                     message: httpErrorToHuman(error),
                     key: 'database-connection-modal',
                 });
@@ -34,7 +42,7 @@ export default ({ databaseId, onUpdate }: { databaseId: string; onUpdate: (datab
 
     return (
         <Button variant={Button.Variants.Secondary} color={'primary'} css={tw`mr-2`} onClick={rotate}>
-            Rotate Password
+            重新生成密码
         </Button>
     );
 };
