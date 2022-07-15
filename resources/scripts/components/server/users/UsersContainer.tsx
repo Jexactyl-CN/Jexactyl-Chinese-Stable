@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import { ApplicationStore } from '@/state';
 import Can from '@/components/elements/Can';
@@ -48,12 +56,12 @@ export default () => {
     }
 
     return (
-        <ServerContentBlock title={'Users'}>
+        <ServerContentBlock title={'子用户'}>
             <FlashMessageRender byKey={'users'} css={tw`mb-4`} />
             <h1 className={'j-left text-5xl'}>Subusers</h1>
-            <h3 className={'j-left text-2xl mt-2 text-neutral-500 mb-10'}>Add or remove users from your server.</h3>
+            <h3 className={'j-left text-2xl mt-2 text-neutral-500 mb-10'}>让伙伴帮你管理服务器.</h3>
             {!subusers.length ? (
-                <p css={tw`text-center text-sm text-neutral-300`}>It looks like you don&apos;t have any subusers.</p>
+                <p css={tw`text-center text-sm text-neutral-300`}>看起来您没有任何子用户.</p>
             ) : (
                 subusers.map((subuser) => <UserRow key={subuser.uuid} subuser={subuser} />)
             )}
