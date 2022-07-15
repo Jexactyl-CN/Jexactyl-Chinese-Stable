@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+ 
 import React from 'react';
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
@@ -28,12 +36,12 @@ export default () => {
                     <div>
                         <NavLink to={'/account'} exact>
                             <div css={tw`flex items-center justify-between`}>
-                                Account <Icon.User css={tw`ml-1`} size={18} />
+                                账户 <Icon.User css={tw`ml-1`} size={18} />
                             </div>
                         </NavLink>
                         <NavLink to={'/account/security'}>
                             <div css={tw`flex items-center justify-between`}>
-                                Security <Icon.Key css={tw`ml-1`} size={18} />
+                                安全 <Icon.Key css={tw`ml-1`} size={18} />
                             </div>
                         </NavLink>
                         <NavLink to={'/account/api'}>
@@ -43,7 +51,7 @@ export default () => {
                         </NavLink>
                         <NavLink to={'/account/ssh'}>
                             <div css={tw`flex items-center justify-between`}>
-                                SSH Keys <Icon.Terminal css={tw`ml-1`} size={18} />
+                                SSH 密钥 <Icon.Terminal css={tw`ml-1`} size={18} />
                             </div>
                         </NavLink>
                     </div>
