@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import React from 'react';
 
 export default ({ uptime }: { uptime: number }) => {
@@ -10,14 +18,14 @@ export default ({ uptime }: { uptime: number }) => {
     if (days > 0) {
         return (
             <>
-                {days}d {hours}h {minutes}m
+                {days}天 {hours}小时 {minutes}分钟
             </>
         );
     }
 
     return (
         <>
-            {hours}h {minutes}m {seconds}s
+            {hours}小时 {minutes}分钟 {seconds}秒
         </>
     );
 };

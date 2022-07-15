@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import React, { memo } from 'react';
 import isEqual from 'react-fast-compare';
@@ -12,7 +20,7 @@ const ExternalConsole = () => {
     const eggFeatures = ServerContext.useStoreState((state) => state.server.data!.eggFeatures, isEqual);
 
     return (
-        <ServerContentBlock title={'Console'}>
+        <ServerContentBlock title={'控制台'}>
             <div css={tw`absolute h-full w-full max-w-full left-0 top-0 p-0 m-0`}>
                 <Spinner.Suspense>
                     <ErrorBoundary>

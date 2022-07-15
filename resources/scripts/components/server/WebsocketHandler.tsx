@@ -1,3 +1,5 @@
+// 为方便技术调试 不翻译技术性报错信息
+
 import tw from 'twin.macro';
 import { ServerContext } from '@/state/server';
 import { Websocket } from '@/plugins/Websocket';
