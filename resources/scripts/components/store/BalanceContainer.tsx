@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import { breakpoint } from '@/theme';
 import styled from 'styled-components/macro';
@@ -37,16 +45,16 @@ export default () => {
     if (!resources) return <StoreError />;
 
     return (
-        <PageContentBlock title={'Account Balance'}>
-            <h1 className={'j-left text-5xl'}>Account Balance</h1>
-            <h3 className={'j-left text-2xl mt-2 text-neutral-500'}>Purchase credits easily via Stripe or PayPal.</h3>
+        <PageContentBlock title={'账户余额'}>
+            <h1 className={'j-left text-5xl'}>账户余额</h1>
+            <h3 className={'j-left text-2xl mt-2 text-neutral-500'}>通过我们提供的支付方式轻松购买积分.</h3>
             <Container className={'j-up lg:grid lg:grid-cols-2 my-10'}>
-                <ContentBox title={'Account Balance'} showFlashes={'account:balance'} css={tw`sm:mt-0`}>
+                <ContentBox title={'账户余额e'} showFlashes={'account:balance'} css={tw`sm:mt-0`}>
                     <h1 css={tw`text-7xl flex justify-center items-center`}>
                         {resources.balance} {store.currency}
                     </h1>
                 </ContentBox>
-                <ContentBox title={'Purchase credits'} showFlashes={'account:balance'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
+                <ContentBox title={'购买积分'} showFlashes={'account:balance'} css={tw`mt-8 sm:mt-0 sm:ml-8`}>
                     {store.gateways?.paypal === 'true' && <PaypalPurchaseForm />}
                     {store.gateways?.stripe === 'true' && <StripePurchaseForm />}
                 </ContentBox>
