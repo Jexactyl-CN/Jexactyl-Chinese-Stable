@@ -6,7 +6,6 @@
  * https://opensource.org/licenses/MIT
  */
  
-
 import axios from 'axios';
 import tw from 'twin.macro';
 import useFlash from '@/plugins/useFlash';
