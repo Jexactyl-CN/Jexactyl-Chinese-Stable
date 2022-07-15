@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import tw from 'twin.macro';
 import useFlash from '@/plugins/useFlash';
 import Can from '@/components/elements/Can';
