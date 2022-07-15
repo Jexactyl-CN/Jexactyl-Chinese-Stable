@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import React from 'react';
 import tw from 'twin.macro';
 import useFlash from '@/plugins/useFlash';
@@ -59,10 +67,10 @@ const ChmodFileModal = ({ files, ...props }: OwnProps) => {
                     <Form css={tw`m-0`}>
                         <div css={tw`flex flex-wrap items-end`}>
                             <div css={tw`w-full sm:flex-1 sm:mr-4`}>
-                                <Field type={'string'} id={'file_mode'} name={'mode'} label={'File Mode'} autoFocus />
+                                <Field type={'string'} id={'file_mode'} name={'mode'} label={'文件权限'} autoFocus />
                             </div>
                             <div css={tw`w-full sm:w-auto mt-4 sm:mt-0`}>
-                                <Button css={tw`w-full`}>Update</Button>
+                                <Button css={tw`w-full`}>更新</Button>
                             </div>
                         </div>
                     </Form>

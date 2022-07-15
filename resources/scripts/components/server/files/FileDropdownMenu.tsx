@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import { join } from 'path';
 import tw from 'twin.macro';
 import * as Icon from 'react-feather';
@@ -118,12 +126,12 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
             <Dialog.Confirm
                 open={showConfirmation}
                 onClose={() => setShowConfirmation(false)}
-                title={`Delete ${file.isFile ? 'File' : 'Directory'}`}
-                confirm={'Delete'}
+                title={`删除 ${file.isFile ? '文件' : '目录'}`}
+                confirm={'删除'}
                 onConfirmed={doDeletion}
             >
-                You will not be able to recover the contents of&nbsp;
-                <span className={'font-semibold text-gray-50'}>{file.name}</span> once deleted.
+                删除文件是永久性操作&nbsp;
+                <span className={'font-semibold text-gray-50'}>{file.name}</span> 将被永久删除且无法恢复.
             </Dialog.Confirm>
             <DropdownMenu
                 ref={onClickRef}
@@ -153,27 +161,27 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                 )}
             >
                 <Can action={'file.update'}>
-                    <Row onClick={() => setModal('rename')} title={'Rename'} />
-                    <Row onClick={() => setModal('move')} title={'Move'} />
-                    <Row onClick={() => setModal('chmod')} title={'Permissions'} />
+                    <Row onClick={() => setModal('rename')} title={'重命名'} />
+                    <Row onClick={() => setModal('move')} title={'移动'} />
+                    <Row onClick={() => setModal('chmod')} title={'权限'} />
                 </Can>
                 {file.isFile && (
                     <Can action={'file.create'}>
-                        <Row onClick={doCopy} title={'Copy'} />
+                        <Row onClick={doCopy} title={'复制'} />
                     </Can>
                 )}
                 {file.isArchiveType() ? (
                     <Can action={'file.create'}>
-                        <Row onClick={doUnarchive} title={'Unarchive'} />
+                        <Row onClick={doUnarchive} title={'解压'} />
                     </Can>
                 ) : (
                     <Can action={'file.archive'}>
-                        <Row onClick={doArchive} title={'Archive'} />
+                        <Row onClick={doArchive} title={'压缩'} />
                     </Can>
                 )}
-                {file.isFile && <Row onClick={doDownload} title={'Download'} />}
+                {file.isFile && <Row onClick={doDownload} title={'下载'} />}
                 <Can action={'file.delete'}>
-                    <Row onClick={() => setShowConfirmation(true)} title={'Delete'} $danger />
+                    <Row onClick={() => setShowConfirmation(true)} title={'删除'} $danger />
                 </Can>
             </DropdownMenu>
         </>

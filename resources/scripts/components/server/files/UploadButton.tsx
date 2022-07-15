@@ -1,3 +1,12 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+ 
+
 import axios from 'axios';
 import tw from 'twin.macro';
 import useFlash from '@/plugins/useFlash';
@@ -150,7 +159,7 @@ export default ({ className }: WithClassname) => {
                     >
                         <div css={tw`w-full flex items-center justify-center`} style={{ pointerEvents: 'none' }}>
                             <InnerContainer>
-                                <p css={tw`text-lg text-neutral-200 text-center`}>Drag and drop files to upload.</p>
+                                <p css={tw`text-lg text-neutral-200 text-center`}>拖放文件以上传.</p>
                             </InnerContainer>
                         </div>
                     </ModalMask>
@@ -170,7 +179,7 @@ export default ({ className }: WithClassname) => {
                 }}
             />
             <Button className={className} onClick={() => fileUploadInput.current && fileUploadInput.current.click()}>
-                Upload
+                上传
             </Button>
         </>
     );
