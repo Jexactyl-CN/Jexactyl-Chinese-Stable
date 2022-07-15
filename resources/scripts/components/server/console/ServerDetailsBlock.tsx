@@ -81,21 +81,21 @@ export default ({ className }: { className?: string }) => {
 
     return (
         <div className={classNames('grid grid-cols-6 gap-2 md:gap-4', className)}>
-            <StatBlock icon={faClock} title={'Uptime'}>
+            <StatBlock icon={faClock} title={'运行时间'}>
                 {status === 'starting' || status === 'stopping' ? (
                     capitalize(status)
                 ) : stats.uptime > 0 ? (
                     <UptimeDuration uptime={stats.uptime / 1000} />
                 ) : (
-                    'Offline'
+                    '离线'
                 )}
             </StatBlock>
-            <StatBlock icon={faWifi} title={'Address'} copyOnClick={allocation}>
+            <StatBlock icon={faWifi} title={'连接地址'} copyOnClick={allocation}>
                 {allocation}
             </StatBlock>
-            <StatBlock icon={faMicrochip} title={'CPU'}>
+            <StatBlock icon={faMicrochip} title={'CPU 负载'}>
                 {status === 'offline' ? (
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>离线</span>
                 ) : (
                     <Limit limit={textLimits.cpu}>{stats.cpu.toFixed(2)}%</Limit>
                 )}
@@ -105,9 +105,9 @@ export default ({ className }: { className?: string }) => {
                     <Bar style={{ width: cpuUsed === undefined ? '100%' : `${cpuUsed}%` }} />
                 )}
             </StatBlock>
-            <StatBlock icon={faMemory} title={'Memory'}>
+            <StatBlock icon={faMemory} title={'运行内存'}>
                 {status === 'offline' ? (
-                    <span className={'text-gray-400'}>Offline</span>
+                    <span className={'text-gray-400'}>离线</span>
                 ) : (
                     <Limit limit={textLimits.memory}>{bytesToString(stats.memory)}</Limit>
                 )}
@@ -117,7 +117,7 @@ export default ({ className }: { className?: string }) => {
                     <Bar style={{ width: memoryUsed === undefined ? '100%' : `${memoryUsed}%` }} />
                 )}
             </StatBlock>
-            <StatBlock icon={faHdd} title={'Disk'}>
+            <StatBlock icon={faHdd} title={'存储空间'}>
                 <Limit limit={textLimits.disk}>{bytesToString(stats.disk)}</Limit>
                 {limits.disk === 0 || diskUsed > 90 ? (
                     <Bar style={{ width: '100%' }} css={tw`bg-red-500`} />
@@ -125,11 +125,11 @@ export default ({ className }: { className?: string }) => {
                     <Bar style={{ width: diskUsed === undefined ? '100%' : `${diskUsed}%` }} />
                 )}
             </StatBlock>
-            <StatBlock icon={faScroll} title={'Save Console Logs'}>
+            <StatBlock icon={faScroll} title={'保存控制台日志'}>
                 <ConsoleShareContainer />
             </StatBlock>
             {renewable && (
-                <StatBlock icon={faClock} title={'Renewal Date'}>
+                <StatBlock icon={faClock} title={'续订日期'}>
                     <RenewalInfo />
                 </StatBlock>
             )}
