@@ -1,3 +1,11 @@
+/*
+ * Pterodactyl CHINA - Panel | Jexactyl Branch
+ * Simplified Chinese Translation Copyright (c) 2021 - 2022 Ice Ling <iceling@ilwork.cn>
+ * Please note the attribution when cite
+ * This software is licensed under the terms of the MIT license.
+ * https://opensource.org/licenses/MIT
+ */
+
 import React, { useState } from 'react';
 import PageContentBlock from '@/components/elements/PageContentBlock';
 import tw from 'twin.macro';
@@ -59,12 +67,12 @@ export default () => {
         <Dialog.Confirm
             open={open === 'renew'}
             onClose={() => setOpen(null)}
-            title={'Confirm server renewal'}
-            confirm={'Continue'}
+            title={'确认服务器续订'}
+            confirm={'继续'}
             onConfirmed={() => doRenewal()}
         >
             <SpinnerOverlay visible={isSubmit} />
-            Are you sure you want to spend {store.renewals.cost} {store.currency} to renew your server?
+            你确定花费 {store.renewals.cost} {store.currency} 续订此服务器?
         </Dialog.Confirm>
     );
 
@@ -72,47 +80,46 @@ export default () => {
         <Dialog.Confirm
             open={open === 'delete'}
             onClose={() => setOpen(null)}
-            title={'Confirm server deletion'}
-            confirm={'Continue'}
+            title={'确认服务器删除'}
+            confirm={'继续'}
             onConfirmed={() => doDeletion()}
         >
             <SpinnerOverlay visible={isSubmit} />
-            This action will remove your server from the system, along with all files and configurations.
+            此操作将从系统中删除您的服务器以及所有文件和配置.
         </Dialog.Confirm>
     );
 
     return (
         <>
             {open && open === 'renew' ? <RenewDialog /> : <DeleteDialog />}
-            <PageContentBlock title={'Server Suspended'}>
+            <PageContentBlock title={'服务器已暂停'}>
                 <FlashMessageRender byKey={'server:renewal'} css={tw`mb-1`} />
                 <div css={tw`flex justify-center`}>
                     <div
                         css={tw`w-full sm:w-3/4 md:w-1/2 p-12 md:p-20 bg-neutral-900 rounded-lg shadow-lg text-center relative`}
                     >
                         <img src={ServerErrorSvg} css={tw`w-2/3 h-auto select-none mx-auto`} />
-                        <h2 css={tw`mt-10 font-bold text-4xl`}>Suspended</h2>
+                        <h2 css={tw`mt-10 font-bold text-4xl`}>已暂停</h2>
                         {renewable ? (
                             <>
                                 <p css={tw`text-sm my-2`}>
-                                    Your server has been suspended due to it not being renewed on time. Please click the
-                                    &apos;Renew&apos; button in order to reactivate your server. If you want to delete
-                                    your server, the resources will automatically be added back to your account so you
-                                    can re-deploy a new server easily.
+                                    您的服务器因未按时续订续费而被暂停. 请点击
+                                    &apos;续订&apos; 按钮以重新激活您的服务器. 如果您想删除您的服务器
+                                    资源将自动添加退换至您的帐户,以便您可以轻松地重新部署新服务器.
                                 </p>
                                 <Button className={'mx-2 my-1'} onClick={() => setOpen('renew')} disabled={isSubmit}>
-                                    Renew Now
+                                    立即续订
                                 </Button>
                                 <Button.Danger
                                     className={'mx-2 my-1'}
                                     onClick={() => setOpen('delete')}
                                     disabled={isSubmit}
                                 >
-                                    Delete Server
+                                    删除服务器
                                 </Button.Danger>
                             </>
                         ) : (
-                            <>This server is suspended and cannot be accessed.</>
+                            <>此服务器已被暂停，无法访问.</>
                         )}
                     </div>
                 </div>

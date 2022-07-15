@@ -27,12 +27,13 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                 <ContentContainer css={tw`text-sm text-center my-4`}>
                     <p css={tw`text-neutral-500 sm:float-left`}>
                         &copy; <a href={'https://jexactyl.com'}>Jexactyl,</a> built on{' '}
-                        <a href={'https://pterodactyl.io'}>Pterodactyl.</a>
+                        <a href={'https://pterodactyl.io'}>Pterodactyl</a> which Sinicization By{' '}
+                        <a href={'https://pterodactyl.top'}>翼龙中国.</a>
                     </p>
                     <p css={tw`text-neutral-500 sm:float-right`}>
-                        <a href={'https://jexactyl.com'}> Site </a>
+                        <a href={'https://pterodactyl.top'}> Site </a>
                         &bull;
-                        <a href={'https://github.com/jexactyl/jexactyl'}> GitHub </a>
+                        <a href={'https://github.com/Jexactyl-CN'}> GitHub </a>
                     </p>
                 </ContentContainer>
             </div>
